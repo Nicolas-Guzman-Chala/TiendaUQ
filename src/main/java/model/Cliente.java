@@ -7,7 +7,6 @@ public abstract class Cliente {
     protected String cedula;
     protected String nombre;
     protected String direccion;
-
     protected List<Factura> listaFacturas;
 
     public Cliente(String cedula, String nombre, String direccion){
@@ -52,7 +51,5 @@ public abstract class Cliente {
         this.listaFacturas = listaFacturas;
     }
 
-    public abstract double descuento(){
-        return descuento;
-    }
+    public abstract double descuento();
 }

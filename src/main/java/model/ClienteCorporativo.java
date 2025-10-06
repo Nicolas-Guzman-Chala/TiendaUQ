@@ -5,12 +5,12 @@ public class ClienteCorporativo extends Cliente{
     private double descuento;
 
     public ClienteCorporativo(String cedula, String nombre, String direccion, String nit, double descuento) {
-
-        if(nit.isBlank() || descuento == 0){
+        super(cedula, nombre, direccion);
+        if(nit.isBlank() || descuento < 0){
             throw new IllegalArgumentException("Tiene que llenar los campos");
         }
 
-        super(cedula, nombre, direccion);
+
         this.nit = nit;
         this.descuento = descuento;
     }
@@ -31,5 +31,8 @@ public class ClienteCorporativo extends Cliente{
         this.descuento = descuento;
     }
 
-
+    @Override
+    public double descuento() {
+        return descuento;
+    }
 }
